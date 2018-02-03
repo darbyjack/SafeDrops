@@ -1,0 +1,5 @@
+name: SafeDrops
+version: @version@
+main: me.glaremasters.safedrops.SafeDrops
+authors: [blockslayer22]
+description: Double tap drop key within 3 seconds to unsecure your drop.
