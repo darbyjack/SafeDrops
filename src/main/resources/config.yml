@@ -1,7 +1,7 @@
-plugin-prefix: "&b[&7Pay2Ride&b]"
+plugin-prefix: "&b[&7SafeDrops&b]"
 
 messages:
-  drop-drop: "Drop again within {amount} seconds to drop your items!"
+  drop: "Drop again within {amount} seconds to drop your items!"
 
 
 # in seconds

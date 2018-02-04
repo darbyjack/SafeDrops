@@ -23,7 +23,7 @@ public class PlayerDropEvent implements Listener {
         FileConfiguration config = SafeDrops.getI().getConfig();
         int length = config.getInt("droptime");
         if (!dropItem.containsKey(player.getName())) {
-            player.sendMessage(ColorUtil.color(config.getString("messages.not-enough-money")));
+            player.sendMessage(ColorUtil.color(config.getString("messages.drop").replace("{amount}", Integer.toString(length))));
             dropItem.put(player.getName(), System.currentTimeMillis());
             Bukkit.getServer().getScheduler().runTaskLater(SafeDrops.getI(), () -> dropItem.remove(player.getName()), length * 20);
             event.setCancelled(true);

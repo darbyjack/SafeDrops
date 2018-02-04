@@ -14,14 +14,11 @@ public final class SafeDrops extends JavaPlugin {
         return i;
     }
 
-    public static String getPrefix() {
-        return prefix;
-    }
 
     @Override
     public void onEnable() {
         i = this;
-
+    saveDefaultConfig();
         prefix = ChatColor.translateAlternateColorCodes('&', getConfig().getString("plugin-prefix")) + ChatColor.RESET + " ";
         Bukkit.getPluginManager().registerEvents(new PlayerDropEvent(), this);
 
@@ -30,5 +27,10 @@ public final class SafeDrops extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+    }
+
+
+    public static String getPrefix() {
+        return prefix;
     }
 }
