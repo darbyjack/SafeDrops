@@ -7,6 +7,10 @@ messages:
 whitelist:
 - "DIAMOND_BLOCK"
 
+messages:
+  help: "/safedrops - Shows this menu"
+  reload: "/safedrops reload - Reloads the config"
+  reload-success: "&aConfiguration reloaded!"
 
 # in seconds
 droptime: 3
