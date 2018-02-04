@@ -3,9 +3,9 @@ plugin-prefix: "&b[&7SafeDrops&b]"
 messages:
   drop: "Drop again within {amount} seconds to drop your items!"
 
-
-blacklist:
-- DIAMOND_BLOCK
+# These items must be confirmed to be dropped
+whitelist:
+- "DIAMOND_BLOCK"
 
 
 # in seconds

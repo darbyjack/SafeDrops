@@ -4,6 +4,7 @@ import java.util.HashMap;
 import me.glaremasters.safedrops.SafeDrops;
 import me.glaremasters.safedrops.util.ColorUtil;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -22,14 +23,17 @@ public class PlayerDropEvent implements Listener {
         Player player = event.getPlayer();
         FileConfiguration config = SafeDrops.getI().getConfig();
         int length = config.getInt("droptime");
-        if (!dropItem.containsKey(player.getName())) {
-            player.sendMessage(ColorUtil.color(config.getString("messages.drop").replace("{amount}", Integer.toString(length))));
-            dropItem.put(player.getName(), System.currentTimeMillis());
-            Bukkit.getServer().getScheduler().runTaskLater(SafeDrops.getI(), () -> dropItem.remove(player.getName()), length * 20);
-            event.setCancelled(true);
-            return;
+        if (config.getStringList("whitelist").contains(event.getItemDrop().getItemStack().getType().toString())) {
+            if (!dropItem.containsKey(player.getName())) {
+
+                player.sendMessage(ColorUtil.color(config.getString("messages.drop").replace("{amount}", Integer.toString(length))));
+                dropItem.put(player.getName(), System.currentTimeMillis());
+                Bukkit.getServer().getScheduler().runTaskLater(SafeDrops.getI(), () -> dropItem.remove(player.getName()), length * 20);
+                event.setCancelled(true);
+                return;
+            }
+            event.setCancelled(false);
         }
-        event.setCancelled(false);
     }
 
 }
