@@ -1,0 +1,8 @@
+plugin-prefix: "&b[&7Pay2Ride&b]"
+
+messages:
+  drop-drop: "Drop again within {amount} seconds to drop your items!"
+
+
+# in seconds
+droptime: 3
