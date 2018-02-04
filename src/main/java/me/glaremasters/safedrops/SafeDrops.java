@@ -18,15 +18,18 @@ public final class SafeDrops extends JavaPlugin {
     @Override
     public void onEnable() {
         i = this;
-    saveDefaultConfig();
-        prefix = ChatColor.translateAlternateColorCodes('&', getConfig().getString("plugin-prefix")) + ChatColor.RESET + " ";
+        saveDefaultConfig();
+        prefix = ChatColor.translateAlternateColorCodes('&', getConfig().getString("plugin-prefix"))
+                + ChatColor.RESET + " ";
         Bukkit.getPluginManager().registerEvents(new PlayerDropEvent(), this);
 
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+       if (PlayerDropEvent.dropItem.size() > 0) {
+           PlayerDropEvent.dropItem.clear();
+       }
     }
 
 

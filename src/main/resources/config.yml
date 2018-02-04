@@ -4,5 +4,9 @@ messages:
   drop: "Drop again within {amount} seconds to drop your items!"
 
 
+blacklist:
+- DIAMOND_BLOCK
+
+
 # in seconds
 droptime: 3

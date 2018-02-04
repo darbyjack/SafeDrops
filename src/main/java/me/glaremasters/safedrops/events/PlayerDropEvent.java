@@ -15,7 +15,7 @@ import org.bukkit.event.player.PlayerDropItemEvent;
  */
 public class PlayerDropEvent implements Listener {
 
-    public HashMap<String, Long> dropItem = new HashMap<>();
+    public static HashMap<String, Long> dropItem = new HashMap<>();
 
     @EventHandler
     public void onPlayerDrop(PlayerDropItemEvent event) {
