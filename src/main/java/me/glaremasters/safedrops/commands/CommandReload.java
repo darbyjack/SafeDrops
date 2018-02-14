@@ -1,8 +1,8 @@
 package me.glaremasters.safedrops.commands;
 
+import static me.glaremasters.safedrops.util.ColorUtil.color;
 import me.glaremasters.safedrops.SafeDrops;
 import me.glaremasters.safedrops.commands.base.CommandBase;
-import me.glaremasters.safedrops.util.ColorUtil;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
@@ -26,7 +26,7 @@ public class CommandReload extends CommandBase {
                 ChatColor.translateAlternateColorCodes('&', config.getString("plugin-prefix"))
                         + ChatColor.RESET + " ";
 
-        player.sendMessage(ColorUtil.color(config.getString("messages.reload-success")));
+        player.sendMessage(color(config.getString("messages.reload-success")));
 
     }
 

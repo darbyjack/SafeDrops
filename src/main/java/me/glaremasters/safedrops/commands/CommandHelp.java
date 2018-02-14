@@ -1,8 +1,8 @@
 package me.glaremasters.safedrops.commands;
 
+import static me.glaremasters.safedrops.util.ColorUtil.color;
 import me.glaremasters.safedrops.SafeDrops;
 import me.glaremasters.safedrops.commands.base.CommandBase;
-import me.glaremasters.safedrops.util.ColorUtil;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 
@@ -18,8 +18,8 @@ public class CommandHelp extends CommandBase {
     public void execute(CommandSender sender, String[] args) {
         FileConfiguration config = SafeDrops.getI().getConfig();
 
-        sender.sendMessage(ColorUtil.color(config.getString("messages.help")));
-        sender.sendMessage(ColorUtil.color(config.getString("messages.reload")));
+        sender.sendMessage(color(config.getString("messages.help")));
+        sender.sendMessage(color(config.getString("messages.reload")));
     }
 
 }
